@@ -1,0 +1,176 @@
+@font-face {font-family: 'regular'; src: url('font/NeueMachina-Regular.otf') format('opentype');}
+* {box-sizing: border-box;}
+html, body {float: left; width: 100%; margin: 0; padding: 0;}
+body {overflow: hidden; height: 100vh; background: #fff; color: #000; position: relative; font-family: 'regular';}
+img {flex-shrink: 0; display: block;}
+:root {--blue: #2c39f2;}
+
+h1 {margin: 0; font-weight: normal; color: var(--blue); line-height: 1;}
+p {margin: 0;}
+a {text-decoration: none; font-size: inherit; color: inherit;}
+
+.cover {position: absolute; top: 0; right: 0; left: 0; bottom: 0; background: #fff; display: flex; align-items: center; justify-content: center; z-index: 100; padding: 25px; transition: 700ms;}
+.cover span {position: absolute; text-align: center; font-size: 24px; bottom: 100px; right: auto; left: auto; animation: click-enter 4s forwards;}
+.cover .mobile-btn {display: none;}
+.cover span.hide {animation: click-done 1s forwards;}
+
+.logo {display: flex; align-items: flex-start; height: 97px; animation: logo 500ms forwards; transition: 300ms;}
+.logo .liga {height: 100%;}
+.logo .flag {width: 75px; background: var(--blue); overflow: hidden; height: 0; padding: 0 13px; margin: 0; clip-path: polygon(0 0, 100% 0, 100% 71%, 50% 100%, 0 70%); transition: 700ms;}
+.logo .flag img {width: 100%; margin-top: 16px; animation: letter 2.8s forwards; transition: 700ms;}
+.logo .flag.animate {animation: flag 2.5s forwards;}
+.logo .frontend {height: 100%;}
+
+.cover.min {bottom: calc(100vh - 75px); right: calc(100vw - 250px); background: transparent;}
+.cover.min .logo {height: 25px;}
+.cover.min .logo .flag {width: 18px; height: 100%; padding: 0 3px; margin: 0 8px;}
+.cover.min .logo .flag img {margin-top: 5px;}
+.cover.min span {display: none;}
+
+header {float: left; width: 100%; height: 75px; display: flex; align-items: center; padding: 0 35px;}
+header nav {display: flex; align-items: center; margin-left: auto;}
+header nav a {color: #0b0b0b; font-size: 14px; padding: 6px 12px; transition: 150ms; position: relative; margin-left: 2px;}
+header nav a:last-child {margin-right: -12px;}
+header nav .arrow {position: absolute; width: 7px; height: 7px; top: 0; right: 0; transition: 150ms;}
+header nav a:hover {color: #fff; background: var(--blue);}
+header nav a:hover .arrow {top: -7px; right: -7px;}
+header .menu {width: 30px; height: 18px; cursor: pointer; margin-left: auto; display: none;}
+header nav .close {width: 25px; height: 25px; cursor: pointer; margin-left: auto; display: none; position: absolute; right: 25px; top: 25px;}
+
+main {float: left; width: 100%; padding: 35px; height: calc(100vh - 74px); display: flex; align-items: center; justify-content: space-between;}
+main h1 {font-size: 96px; max-width: 600px; width: 60%;}
+.for-who {width: 37%;}
+.for-who p {font-size: 30px; line-height: 1.3; margin-top: 35px; float: left;}
+.for-who img {display: none;}
+.for-who .dino-animate img {display: block;}
+
+.dino-animate {float: left; width: 100%; height: 25vh; display: flex; align-items: center; justify-content: center; position: relative;}
+.dino-animate .light {position: absolute; transition: 200ms;}
+.dino-animate .light.purple {top: -5%; left: 12%; animation: light-purple 3s infinite;}
+.dino-animate .light.pink {top: -15%; left: 40%; animation: light-pink 3s infinite;}
+.dino-animate .light.blue {top: -50%; left: 60%; animation: light-blue 3s infinite;}
+.dino-animate .light.purple-min {top: 34%; left: 67%; width: 13%; transform: rotate(83deg); animation: light-purple-min 3s infinite;}
+.dino-animate .dino {width: 71px; height: 85px; background-image: url("img/dino.svg"); background-size: contain; margin: auto auto 0; animation: dino 3s infinite;}
+
+@keyframes logo {
+	0% {opacity: 0; filter: invert(50%);}
+	10% {opacity: 0; filter: invert(50%);}
+	100% {opacity: 1; filter: invert(0%);}
+}
+
+@keyframes flag {
+	25% {margin: 0; height: 0;}
+	50% {margin: 0 33px; height: 0;}
+	100% {margin: 0 33px; height: 100%;}
+}
+
+@keyframes letter {
+	0% {opacity: 0;}
+	90% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes click-enter {
+	0% {bottom: -24px;}
+	80% {bottom: -24px;}
+	90% {bottom: 120px;}
+	100% {bottom: 100px;}
+}
+
+@keyframes click-done {
+	0% {bottom: 100px;}
+	40% {bottom: 120px;}
+	99% {bottom: -24px;}
+	100% {display: none;}
+}
+
+@keyframes scale-cover {
+	0% {bottom: 0; right: 0;}
+	100% {bottom: calc(100vh - 75px); right: calc(100vw - 202px);}
+}
+
+@keyframes dino {
+	0% {transform: none;}
+	30% {transform: none;}
+	40% {transform: rotate(-50deg);}
+	45% {transform: rotate(-45deg);}
+	50% {transform: rotate(-50deg);}
+	55% {transform: rotate(-45deg);}
+	60% {transform: rotate(-50deg);}
+	65% {transform: rotate(-45deg);}
+	70% {transform: rotate(-50deg);}
+	80% {transform: none;}
+	100% {transform: none;}
+}
+
+@keyframes light-purple {
+	0% {top: -5%; left: 12%; transform: none; opacity: 0;}
+	30% {top: -5%; left: 12%; transform: none; opacity: 0;}
+	40% {top: -15%; left: 5%; transform: rotate(-10deg); opacity: 1;}
+	50% {top: -15%; left: 5%; transform: rotate(-20deg); opacity: 1;}
+	60% {top: -15%; left: 5%; transform: rotate(-10deg); opacity: 1;}
+	70% {top: -15%; left: 5%; transform: rotate(-20deg); opacity: 1;}
+	80% {top: -15%; left: 5%; transform: rotate(-10deg); opacity: 1;}
+	90% {top: -15%; left: 5%; transform: rotate(-20deg); opacity: 1;}
+	100% {top: -5%; left: 12%; transform: none; opacity: 0;}
+}
+
+@keyframes light-pink {
+	0% {top: -15%; left: 40%; transform: none; opacity: 0;}
+	30% {top: -15%; left: 40%; transform: none; opacity: 0;}
+	40% {top: -22%; left: 35%; transform: rotate(-20deg); opacity: 1;}
+	53% {top: -22%; left: 35%; transform: rotate(-20deg); opacity: 1;}
+	60% {top: -22%; left: 35%; transform: rotate(-10deg); opacity: 1;}
+	73% {top: -22%; left: 35%; transform: rotate(-20deg); opacity: 1;}
+	80% {top: -22%; left: 35%; transform: rotate(-10deg); opacity: 1;}
+	90% {top: -15%; left: 40%; transform: none; opacity: 0;}
+	100% {top: -15%; left: 40%; transform: none; opacity: 0;}
+}
+
+@keyframes light-blue {
+	0% {top: -50%; left: 60%; transform: none; opacity: 0;}
+	30% {top: -50%; left: 60%; transform: none; opacity: 0;}
+	40% {top: -55%; left: 65%; transform: rotate(20deg); opacity: 1;}
+	50% {top: -55%; left: 65%; transform: rotate(20deg); opacity: 1;}
+	62% {top: -55%; left: 65%; transform: rotate(10deg); opacity: 1;}
+	70% {top: -55%; left: 65%; transform: rotate(20deg); opacity: 1;}
+	82% {top: -55%; left: 65%; transform: rotate(10deg); opacity: 1;}
+	95% {top: -50%; left: 60%; transform: none; opacity: 0;}
+	100% {top: -50%; left: 60%; transform: none; opacity: 0;}
+}
+
+@keyframes light-purple-min {
+	0% {top: 34%; left: 67%; transform: rotate(83deg); opacity: 0;}
+	30% {top: 34%; left: 67%; transform: rotate(83deg); opacity: 0;}
+	40% {top: 30%; left: 75%; transform: rotate(93deg); opacity: 1;}
+	57% {top: 30%; left: 75%; transform: rotate(93deg); opacity: 1;}
+	67% {top: 30%; left: 75%; transform: rotate(73deg); opacity: 1;}
+	77% {top: 30%; left: 75%; transform: rotate(93deg); opacity: 1;}
+	87% {top: 30%; left: 75%; transform: rotate(73deg); opacity: 1;}
+	90% {top: 34%; left: 67%; transform: rotate(83deg); opacity: 0;}
+	100% {top: 34%; left: 67%; transform: rotate(83deg); opacity: 0;}
+}
+
+@media screen and (max-width: 900px) {
+	.logo {height: 69px;}
+	.logo .flag {width: 56px;}
+	
+	.cover .fullscreen-btn {display: none;}
+	.cover .mobile-btn {display: block;}
+	
+	header .menu {display: block;}
+	header nav {position: absolute; top: 0; right: 0; width: 100vw; height: 100vh; background: #ffffff; z-index: 30; display: none; padding: 50vh 0;}
+	header nav a {display: block; font-size: 28px; padding: 15px 45px; margin: 0 auto; width: fit-content; font-weight: bold;}
+	header nav a:first-child {margin-top: -25%;}
+	header nav .arrow {top: 15px; right: 30px;}
+	header nav .close {display: block;}
+	
+	main {position: relative;}
+	main h1 {width: 100%; max-width: none; height: 100%; padding: 32% 0;}
+	.for-who {position: absolute; top: 0; bottom: 0; left: -100vw; width: 100vw; transition: 300ms; background: var(--blue); display: flex; flex-direction: column; align-items: center; justify-content: center;}
+	.for-who p {color: #fff; max-width: 355px;}
+	.for-who.show {left: 0;}
+	.dino-animate {width: 43%; height: 20vh;}
+	.dino-animate img {filter: grayscale(100%) brightness(500%);}
+	.dino-animate .dino {background-image: url("img/dino-white.svg");}
+}

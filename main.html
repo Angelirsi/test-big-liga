@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>testBig.Liga</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+	</head>
+	<body>
+		
+		<div class="cover js-cover">
+			<div class="logo js-logo">
+				<img class="liga" src="img/liga.svg" alt="">
+				<div class="flag animate js-flag">
+					<img src="img/logo-a.svg" alt="">
+				</div>
+				<img class="frontend" src="img/fronend.svg" alt="">
+			</div>
+			<span id="js-hide-cover" class="fullscreen-btn" onclick="HideCover(this)">Нажмите на Enter</span>
+			<span class="mobile-btn">Нажмите на экран</span>
+		</div>
+		
+		<header>
+			<nav id="js-menu">
+				<a href="">О нас</a>
+				<a href="">Цены</a>
+				<a href="">Критерии качества</a>
+				<a href="" target="_blank">
+					Тестирование
+					<img class="arrow" src="img/arrow.png" alt="">
+				</a>
+				<a href="" target="_blank">
+					Блог
+					<img class="arrow" src="img/arrow.png" alt="">
+				</a>
+				<img class="close" src="img/close.svg" alt="" onclick="CloseMenu()">
+			</nav>
+			<img class="menu" src="img/menu.svg" alt="" onclick="OpenMenu()">
+		</header>
+		
+		<main class="js-main">
+			<h1 class="js-show-blue-screen">Вёрстка и фронтенд любой сложности</h1>
+			<div class="for-who js-for-who">
+				<div id="js-dino-animate">
+					<img class="light purple" src="img/light-purple.png" alt="">
+					<img class="light pink" src="img/light-pink.png" alt="">
+					<img class="light blue" src="img/light-blue.png" alt="">
+					<img class="light purple-min" src="img/light-purple.png" alt="">
+					<div class="dino"></div>
+				</div>
+				<p>для digital‑агентств, продуктовых компаний и фриланс‑команд</p>
+			</div>
+		</main>
+		
+		<script src="scripts.js"></script>
+	</body>
+</html>
